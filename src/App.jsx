@@ -7,21 +7,22 @@ import Facebook from "../src/components/screens/Facebook";
 import TikTok from "../src/components/screens/Tiktok";
 import Whatsapp from "../src/components/screens/Whatsapp";
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-
-        <Route path="/tiktok" component={TikTok} />
-        <Route path="/facebook" component={Facebook} />
-        <Route path="/instagram" component={Instagram} />
-        <Route path="/whatsapp" component={Whatsapp} />
-      </div>
-    </Router>
+    <>
+      <BrowserRouter>
+      <Header />
+        <Routes>
+          <Route path="/tiktok" element={<TikTok />} />
+          <Route path="/facebook" element={<Facebook />} />
+          <Route path="/whatsapp" element={<Whatsapp />} />
+          <Route path="/instagram" element={<Instagram />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
