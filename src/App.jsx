@@ -1,28 +1,27 @@
-import './App.css';
+import React from "react";
+
+import { Header } from "./components/Header";
+
+import Instagram from "../src/components/screens/Instagram";
+import Facebook from "../src/components/screens/Facebook";
+import TikTok from "../src/components/screens/Tiktok";
+import Whatsapp from "../src/components/screens/Whatsapp";
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+
+        <Route path="/tiktok" component={TikTok} />
+        <Route path="/facebook" component={Facebook} />
+        <Route path="/instagram" component={Instagram} />
+        <Route path="/whatsapp" component={Whatsapp} />
+      </div>
+    </Router>
   );
 }
 
