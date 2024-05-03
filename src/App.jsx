@@ -22,6 +22,7 @@ function App() {
           <Route path="/instagram" element={<Instagram />} />
         </Routes>
       </BrowserRouter>
+      <div></div>
     </>
   );
 }
